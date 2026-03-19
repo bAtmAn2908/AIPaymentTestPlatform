@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install Execution Dependencies
+      run: |
+        cd backend
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Enhanced Simulator Edge-Case Tests (Pytest)
+      run: |
+        cd backend
+        # Triggers our execution and simulation domains safely mapped via pytest-mock
+        pytest tests/ --junitxml=reports/test-results.xml
+        
+    - name: Generate & Export Test Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: pytest-execution-results
+        path: backend/reports/test-results.xml
+        if-no-files-found: error
+
+    - name: Build Full Production Container Stack
+      run: docker-compose up -d --build
+
+    - name: Verify Restructured API Health
+      run: |
+        sleep 20
+        # Check backend boot utilizing the newly refactored src.core paths
+        curl http://localhost:8000/health | grep -q "domain-driven"
