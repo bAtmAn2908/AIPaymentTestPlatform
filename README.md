@@ -23,6 +23,7 @@ Please place the corresponding screenshots in the \`docs/images/\` directory.
 ### 1. Platform Overview (Dashboard)
 The main dashboard visualizes real-time global latency trends, average suite execution speeds, and the active status of the async worker queue.
 *[Screenshot Placeholder: You can drag and drop your Platform Overview image here in the GitHub editor]*
+docs/images/Screenshot (358).png
 
 ### 2. Execute Test Suites
 A dedicated interface to safely trigger parallel execution blocks without blocking the main UI thread.
