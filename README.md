@@ -22,19 +22,19 @@ Please place the corresponding screenshots in the \`docs/images/\` directory.
 
 ### 1. Platform Overview (Dashboard)
 The main dashboard visualizes real-time global latency trends, average suite execution speeds, and the active status of the async worker queue.
-![Platform Overview](./docs/images/platform-overview.png)
+*[Screenshot Placeholder: You can drag and drop your Platform Overview image here in the GitHub editor]*
 
 ### 2. Execute Test Suites
 A dedicated interface to safely trigger parallel execution blocks without blocking the main UI thread.
-![Execute Test Suites](./docs/images/execute-test-suites.png)
+*[Screenshot Placeholder: You can drag and drop your Execute Test Suites image here in the GitHub editor]*
 
 ### 3. Recent Executions
 Live, streaming logs of batch run summaries calculating total simulated latency.
-![Recent Executions](./docs/images/recent-executions.png)
+*[Screenshot Placeholder: You can drag and drop your Recent Executions image here in the GitHub editor]*
 
 ### 4. AI Anomaly Insights
 The automated heuristics engine categorizing flaky behavior across millions of mocked transactions.
-![AI Anomaly Insights](./docs/images/ai-anomaly-insights.png)
+*[Screenshot Placeholder: You can drag and drop your AI Anomaly Insights image here in the GitHub editor]*
 
 ---
 
